@@ -1,0 +1,356 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: potential::potential(potential *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at Particle.hpp(12,7) inlined into potential.cpp(3,14)
+   remark #15389: vectorization support: reference this has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 3 
+   remark #15477: vector loop cost: 3.000 
+   remark #15478: estimated potential speedup: 0.800 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(334,7) inlined into potential.cpp(9,20)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 340 and gen._M_x line 336
+LOOP END
+
+LOOP BEGIN at potential.cpp(12,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(14,31)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(14,31)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(14,31)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(14,31)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(15,31)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(15,31)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(15,31)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(15,31)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(16,31)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(16,31)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(16,31)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(16,31)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(17,38)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(17,38)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(17,38)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(17,38)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: potential::potential(potential *const, const int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at Particle.hpp(12,7) inlined into potential.cpp(3,14)
+   remark #15389: vectorization support: reference this has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 3 
+   remark #15477: vector loop cost: 3.000 
+   remark #15478: estimated potential speedup: 0.800 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(334,7) inlined into potential.cpp(3,14)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 340 and gen._M_x line 336
+LOOP END
+
+LOOP BEGIN at potential.cpp(12,3) inlined into potential.cpp(3,14)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(3478,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(407,26) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(408,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.257
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 17.500 
+         remark #15478: estimated potential speedup: 1.470 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(412,7) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 416 and gen._M_x line 416
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 416 and gen._M_x line 416
+      LOOP END
+
+      LOOP BEGIN at /lrz/mnt/sys.x86_64/compilers/gcc/4.9.3/bin/../include/c++/4.9.3/bits/random.tcc(404,7) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: potential::CalculateGravitationalPotential(potential *, int, int, int, real_type &)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at potential.cpp(28,3)
+   remark #15388: vectorization support: reference this has aligned access   [ potential.cpp(30,59) ]
+   remark #15388: vectorization support: reference this has aligned access   [ potential.cpp(31,59) ]
+   remark #15388: vectorization support: reference this has aligned access   [ potential.cpp(32,59) ]
+   remark #15388: vectorization support: reference this has aligned access   [ potential.cpp(35,5) ]
+   remark #15305: vectorization support: vector length 64
+   remark #15309: vectorization support: normalized vectorization overhead 0.069
+   remark #15301: SIMD LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 4 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 88 
+   remark #15477: vector loop cost: 31.710 
+   remark #15478: estimated potential speedup: 2.170 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at potential.cpp(28,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================

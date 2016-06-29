@@ -1,0 +1,429 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: potential::potential(potential *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at potential.cpp(6,35)
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(12,7) ]
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(13,7) ]
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(14,7) ]
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(15,7) ]
+   remark #15305: vectorization support: vector length 8
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15462: unmasked indexed (or gather) loads: 4 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 16 
+   remark #15477: vector loop cost: 6.000 
+   remark #15478: estimated potential speedup: 2.500 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at potential.cpp(6,35)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.211
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(348,7) inlined into potential.cpp(8,20)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 354 and gen._M_x line 350
+LOOP END
+
+LOOP BEGIN at potential.cpp(11,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(13,37)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(13,37)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(13,37)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(13,37)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(14,37)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(14,37)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(14,37)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(14,37)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(15,37)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(15,37)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(15,37)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(15,37)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(16,42)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(16,42)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(16,42)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(16,42)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: potential::potential(potential *const, const int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at potential.cpp(6,35) inlined into potential.cpp(3,14)
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(12,7) ]
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(13,7) ]
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(14,7) ]
+   remark #15416: vectorization support: scatter was generated for the variable U8_V:  strided by 4   [ Particle.hpp(15,7) ]
+   remark #15305: vectorization support: vector length 8
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15462: unmasked indexed (or gather) loads: 4 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 16 
+   remark #15477: vector loop cost: 6.000 
+   remark #15478: estimated potential speedup: 2.500 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at potential.cpp(6,35) inlined into potential.cpp(3,14)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.211
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(348,7) inlined into potential.cpp(3,14)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 354 and gen._M_x line 350
+LOOP END
+
+LOOP BEGIN at potential.cpp(11,3) inlined into potential.cpp(3,14)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(2819,7) inlined into potential.cpp(3,14)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.176
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 26 
+         remark #15477: vector loop cost: 4.250 
+         remark #15478: estimated potential speedup: 5.690 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(422,4) inlined into potential.cpp(3,14)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(425,30) ]
+         remark #15388: vectorization support: reference gen._M_x has aligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15389: vectorization support: reference gen._M_x has unaligned access   [ /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(426,8) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 8
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.156
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at /usr/linux-k1om-4.7/linux-k1om/../x86_64-k1om-linux/include/c++/4.7.0/bits/random.tcc(430,4) inlined into potential.cpp(3,14)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between gen._M_x line 434 and gen._M_x line 434
+         remark #15346: vector dependence: assumed ANTI dependence between gen._M_x line 434 and gen._M_x line 434
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: potential::CalculateGravitationalPotential(potential *, int, int, int, real_type &)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at potential.cpp(26,3)
+   remark #15415: vectorization support: gather was generated for the variable this:  strided by 4   [ potential.cpp(28,26) ]
+   remark #15415: vectorization support: gather was generated for the variable this:  strided by 4   [ potential.cpp(29,26) ]
+   remark #15415: vectorization support: gather was generated for the variable this:  strided by 4   [ potential.cpp(30,26) ]
+   remark #15415: vectorization support: gather was generated for the variable this:  strided by 4   [ potential.cpp(33,20) ]
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.302
+   remark #15301: SIMD LOOP WAS VECTORIZED
+   remark #15460: masked strided loads: 4 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 83 
+   remark #15477: vector loop cost: 14.500 
+   remark #15478: estimated potential speedup: 5.460 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at potential.cpp(26,3)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.343
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+===========================================================================
